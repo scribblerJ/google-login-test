@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://accounts.google.com/gsi/client" async></script>
     <!-- google login -->
     <!-- <script>
         function onSignIn(googleUser) {
@@ -18,12 +19,21 @@
     
 </head>
 <body>
-    <script src="https://accounts.google.com/gsi/client" async defer></script>
     <div id="g_id_onload"
-         data-client_id="470404382312-8tdj0v4vedbihv6p01gkjm439kg91il8.apps.googleusercontent.com"
-         data-ux_mode="redirect"
-         data-login_uri="http://127.0.0.1:5500/google-login-test/index.html">
+     data-client_id="470404382312-8tdj0v4vedbihv6p01gkjm439kg91il8.apps.googleusercontent.com"
+     data-context="signin"
+     data-ux_mode="popup"
+     data-login_uri="https://scribblerj.github.io"
+     data-auto_prompt="false">
     </div>
-    <div class="g_id_signin" data-type="standard"></div>
-  </body>
+
+    <div class="g_id_signin"
+        data-type="standard"
+        data-shape="pill"
+        data-theme="outline"
+        data-text="signin_with"
+        data-size="large"
+        data-logo_alignment="left">
+    </div>
+</body>
 </html>
