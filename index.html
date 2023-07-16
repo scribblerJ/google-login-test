@@ -4,9 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <!-- google login -->
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta name="google-signin-client_id" content="470404382312-8tdj0v4vedbihv6p01gkjm439kg91il8.apps.googleusercontent.com">
+    <script>
+        function onSignIn(googleUser) {
+                var profile = googleUser.getBasicProfile();
+                console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+                console.log('Name: ' + profile.getName());
+                console.log('Image URL: ' + profile.getImageUrl());
+                console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+            }
+        // function signOut() {
+        //     var auth2 = gapi.auth2.getAuthInstance();
+        //     auth2.signOut().then(function () {
+        //     console.log('User signed out.');
+        //     });
+        // }
+    </script>
+    <!-- google login -->
+    
 </head>
 <body>
-    <a href="./login_success.html">login 성공 페이지</a>
-    <a href="./login.html">login 페이지</a>
+    <div class="g-signin2" data-onsuccess="onSignIn"></div>
+    <!-- <a href="#" onclick="signOut();">Sign out</a> -->
 </body>
 </html>
