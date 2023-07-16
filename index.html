@@ -5,9 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <!-- google login -->
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
-    <meta name="google-signin-client_id" content="470404382312-8tdj0v4vedbihv6p01gkjm439kg91il8.apps.googleusercontent.com">
-    <script>
+    <!-- <script>
         function onSignIn(googleUser) {
                 var profile = googleUser.getBasicProfile();
                 console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
@@ -15,18 +13,17 @@
                 console.log('Image URL: ' + profile.getImageUrl());
                 console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
             }
-        // function signOut() {
-        //     var auth2 = gapi.auth2.getAuthInstance();
-        //     auth2.signOut().then(function () {
-        //     console.log('User signed out.');
-        //     });
-        // }
-    </script>
+    </script> -->
     <!-- google login -->
     
 </head>
 <body>
-    <div class="g-signin2" data-onsuccess="onSignIn"></div>
-    <!-- <a href="#" onclick="signOut();">Sign out</a> -->
-</body>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <div id="g_id_onload"
+         data-client_id="470404382312-8tdj0v4vedbihv6p01gkjm439kg91il8.apps.googleusercontent.com"
+         data-ux_mode="redirect"
+         data-login_uri="http://127.0.0.1:5500/google-login-test/index.html">
+    </div>
+    <div class="g_id_signin" data-type="standard"></div>
+  </body>
 </html>
